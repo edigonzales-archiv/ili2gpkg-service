@@ -37,7 +37,7 @@ import javax.sql.DataSource;
  * <p>
  * Here are basic examples of valid properties for a database with the name 'javabase':
  * <pre>
- * javabase.jdbc.url = jdbc:postgresql://localhost:5432/rosebud2
+ * javabase.jdbc.url = jdbc:postgresql://localhost:5432/xanadu2
  * javabase.jdbc.driver = org.postgresql.Driver
  * javabase.jdbc.username = stefan
  * javabase.jdbc.password = ziegler12
@@ -47,8 +47,8 @@ import javax.sql.DataSource;
  * </pre>
  * Here is a basic use example:
  * <pre>
- * DAOFactory rosebud2 = DAOFactory.getInstance("rosebud2.jdbc");
- * CantonDAO cantonDAO = rosebud2.getCantonDAO();
+ * DAOFactory xanadu2 = DAOFactory.getInstance("xanadu2.jdbc");
+ * TranslationDAO translationDAO = xanadu2.getTranslationDAO();
  * </pre>
  *
  * @author BalusC
@@ -124,14 +124,14 @@ public abstract class DAOFactory {
 
     // DAO implementation getters -----------------------------------------------------------------
 
-//    /**
-//     * Returns the Canton DAO associated with the current DAOFactory.
-//     * @return The Canton DAO associated with the current DAOFactory.
-//     */
-//    public CantonDAO getCantonDAO() {
-//        return new CantonDAOJDBC(this);
-//    }
-//    
+    /**
+     * Returns the Translation DAO associated with the current DAOFactory.
+     * @return The Translation DAO associated with the current DAOFactory.
+     */
+    public TranslationDAO getTranslationDAO() {
+        return new TranslationDAOJDBC(this);
+    }
+    
 //    /**
 //     * Returns the Model DAO associated with the current DAOFactory.
 //     * @return The Model DAO associated with the current DAOFactory.
