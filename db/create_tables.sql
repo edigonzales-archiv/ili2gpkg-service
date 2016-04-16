@@ -28,6 +28,7 @@ CREATE TABLE ili2gpkg_service.job
 (
   ogc_fid serial NOT NULL,
   state character varying(11) NOT NULL DEFAULT 'NOT_STARTED',
+  resolution character varying(10), --success / failure
   job_started timestamp,
   job_finished timestamp,
   CONSTRAINT job_pkey PRIMARY KEY (ogc_fid)
